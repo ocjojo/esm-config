@@ -31,7 +31,7 @@
 		"rollup-plugin-babel": "^4.3.3",
 		"rollup-plugin-terser": "^5.1.1"
 	},
-	"author": "Lukas Ehnle",
+	"author": "Lukas Ehnle <lukas@owlabout.de>",
 	"license": "MIT",
 	"dependencies": {
 		"rollup": "^1.17.0"

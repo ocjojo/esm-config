@@ -17,14 +17,28 @@ const referenceConfig = [
 
 esmConfig(file)
 	.then(config => {
-		assert.strictEqual(Array.isArray(config), true)
-		assert.strictEqual(Array.isArray(config[0].external), true)
+		assert.equal(Array.isArray(config), true)
+		assert.equal(Array.isArray(config[0].external), true)
 		const strippedConfig = JSON.parse(JSON.stringify(config))
-		assert.deepStrictEqual(strippedConfig[0].input, referenceConfig[0].input)
-		assert.deepStrictEqual(strippedConfig[0].output, referenceConfig[0].output)
-		assert.deepStrictEqual(
+		assert.deepEqual(strippedConfig[0].input, referenceConfig[0].input)
+		assert.deepEqual(strippedConfig[0].output, referenceConfig[0].output)
+		assert.deepEqual(
 			strippedConfig[0].plugins,
 			referenceConfig[0].plugins
 		)
 	})
 	.catch(console.error)
+
+esmConfig('non-existing-file.js').then(config => {
+	assert.ok(config)
+	assert.equal(Object.keys(config).length, 0)
+}).catch(console.error)
+
+esmConfig('non-existing-file-with-default.js', {
+	name: "defaultName",
+	check: true
+}).then(config => {
+	assert.ok(config)
+	assert.equal(config.name, "defaultName")
+	assert.equal(config.check, true)
+}).catch(console.error)

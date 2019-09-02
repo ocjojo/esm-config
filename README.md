@@ -6,7 +6,7 @@ Transform ES module configs to cjs using rollup.
 
 Since ES6 `import` and `export` are standard, yet there is still ~~no support~~ only experimental support in NodeJS.
 
-Most of the time that is not a problem, since projects have a build step transforming (webpack/rollup/babel) the syntax. So people expect **import/export** to just work.
+Most of the time that is not a problem, since projects have a build step (webpack/rollup/babel) transforming the syntax. So people expect **import/export** to just work.
 
 This module allows you to use ES modules syntax to write your configuration. Build a project or framework that allows more advanced configuration than toml, yaml or json would.
 Like `rollup.config.js`, `webpack.config.js`, or `postcss.config.js`. (Only rollup allows import/export out of the box).

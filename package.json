@@ -1,7 +1,7 @@
 {
 	"name": "esm-config",
 	"description": "Transform es module configs to cjs using rollup.",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"repository": "https://github.com/ocjojo/esm-config",
 	"bugs": "https://github.com/ocjojo/esm-config/issues",
 	"engines": {
